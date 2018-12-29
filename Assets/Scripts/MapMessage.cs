@@ -6,7 +6,7 @@ public enum MapMessage{
     MapNull,//空地
     Wall,
     Body,
-    food
+    Food
 }
 
 public enum Direction

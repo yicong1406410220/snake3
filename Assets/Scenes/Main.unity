@@ -15968,6 +15968,10 @@ MonoBehaviour:
   - {fileID: 56713826}
   - {fileID: 653166238}
   - {fileID: 560925024}
+  direction: 4
+  mPos: 
+  SpacingTime: 0.5
+  LastMoveTime: 0
 --- !u!1 &1739397349
 GameObject:
   m_ObjectHideFlags: 0
