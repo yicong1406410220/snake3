@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameLogin : MonoBehaviour {
@@ -40,9 +41,9 @@ public class GameLogin : MonoBehaviour {
 
     public List<Direction> mPos = new List<Direction>();
 
-    public float SpacingTime = 0.1f;
+    float SpacingTime = 0.5f;
 
-    public float LastMoveTime = 0f;
+    float LastMoveTime = 0f;
 
     bool IsLose = false;
 
@@ -56,6 +57,9 @@ public class GameLogin : MonoBehaviour {
     int score = 0;
     int i = 0; //移动步数
 
+    public Text ScoreText;
+
+    public GameObject GameOverUI;
 
     // Use this for initialization
     void Start ()
@@ -165,15 +169,50 @@ public class GameLogin : MonoBehaviour {
         int fx, fy;
         do
         {
-            fx = Random.Range(0, 16);                       //为何是21 而不是CHANG 
-            fy = Random.Range(0, 16);                       //为何是19 而不是KUAN ，可见你修改过CHANG和而不是KUAN 就忘记修改这里了//这就是使用魔数的麻烦点，维修性差→_→ 
-        } while (MapMessages[fx,fy] != MapMessage.MapNull);
+            do
+            {
+                fx = Random.Range(0, 16);                       //为何是21 而不是CHANG 
+                fy = Random.Range(0, 16);                       //为何是19 而不是KUAN ，可见你修改过CHANG和而不是KUAN 就忘记修改这里了//这就是使用魔数的麻烦点，维修性差→_→ 
+            } while (MapMessages[fx, fy] != MapMessage.MapNull);
+        } while (i<3 && fy == 4);
+
         MapMessages[fx,fy] = MapMessage.Food;
     }
 
-    // Update is called once per frame
-    void Update () {
+    public void SetUp()
+    {
+        direction = Direction.up;
+    }
 
+    public void SetDown()
+    {
+        direction = Direction.down;
+    }
+
+    public void SetRight()
+    {
+        direction = Direction.right;
+    }
+
+    public void SetLeft()
+    {
+        direction = Direction.left;
+    }
+
+    // Update is called once per frame
+    void Update ()
+    {
+
+        ScoreText.text = score.ToString();
+        PCHandShank();
+
+    }
+
+    /// <summary>
+    /// pc控制器
+    /// </summary>
+    private void PCHandShank()
+    {
         if (Input.GetKeyDown(KeyCode.A))
         {
             direction = Direction.left;
@@ -190,7 +229,6 @@ public class GameLogin : MonoBehaviour {
         {
             direction = Direction.down;
         }
-
     }
 
     // 如果启用 MonoBehaviour，则每个固定帧速率的帧都将调用此函数
@@ -245,6 +283,7 @@ public class GameLogin : MonoBehaviour {
         {
             IsLose = true;
             RefreshScreen();
+            GameOver();
             Debug.Log("游戏失败...");
             return;
         }         //撞墙或咬自己。 
@@ -288,4 +327,13 @@ public class GameLogin : MonoBehaviour {
         RefreshScreen();
     }
 
+    void GameOver()
+    {
+        GameOverUI.SetActive(true);
+    }
+
+    public void Restarting()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 }

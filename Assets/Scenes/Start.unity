@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 27473706}
   - component: {fileID: 27473705}
   m_Layer: 5
-  m_Name: ExitText
+  m_Name: SettingText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -180,7 +180,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u9000\u51FA\u6E38\u620F"
+  m_Text: 'SETTING
+
+'
 --- !u!222 &27473706
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -204,7 +206,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &231827941
 RectTransform:
   m_ObjectHideFlags: 0
@@ -343,6 +345,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 377344056}
   - {fileID: 1382250592}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -439,7 +442,7 @@ GameObject:
   - component: {fileID: 377344058}
   - component: {fileID: 377344057}
   m_Layer: 5
-  m_Name: ExitButton
+  m_Name: SettingButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -456,13 +459,13 @@ RectTransform:
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 27473704}
-  m_Father: {fileID: 1382250592}
-  m_RootOrder: 2
+  m_Father: {fileID: 255648091}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 80, y: -291.66666}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 139, y: -76}
+  m_SizeDelta: {x: 93.4, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &377344057
 MonoBehaviour:
@@ -606,7 +609,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u5F00\u59CB\u6E38\u620F"
+  m_Text: StART
 --- !u!222 &431094409
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -881,7 +884,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 80, y: -58.333332}
+  m_AnchoredPosition: {x: 80, y: -87.5}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &759997586
@@ -1026,7 +1029,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u5173\u4E8E"
+  m_Text: About
 --- !u!222 &1302808066
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1063,9 +1066,8 @@ RectTransform:
   m_Children:
   - {fileID: 759997585}
   - {fileID: 1879333359}
-  - {fileID: 377344056}
   m_Father: {fileID: 255648091}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1135,7 +1137,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 80, y: -175}
+  m_AnchoredPosition: {x: 80, y: -262.5}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1879333360
