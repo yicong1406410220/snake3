@@ -61,8 +61,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\AboutPanel.cs" />
+    <Compile Include="Assets\GameStart.cs" />
     <Compile Include="Assets\Scripts\GameLogin.cs" />
     <Compile Include="Assets\Scripts\MapMessage.cs" />
+    <Compile Include="Assets\SettingPanel.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>D:/testUnityWork/snake3/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

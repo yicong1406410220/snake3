@@ -64,6 +64,7 @@ public class GameLogin : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
+        SpacingTime = PlayerPrefs.GetFloat("speed", 0);
         ClearMap();
         InitMap();
         RefreshScreen();
@@ -240,6 +241,7 @@ public class GameLogin : MonoBehaviour {
             return;
         }
 
+        SpacingTime = PlayerPrefs.GetFloat("speed", 0);
         if (Time.timeSinceLevelLoad - LastMoveTime < SpacingTime)
         {
             return;
